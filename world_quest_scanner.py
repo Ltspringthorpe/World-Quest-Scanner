@@ -10,7 +10,8 @@ def scan_active_world_quests():
     email_body = ''
 
     strings = ['Sabertron', 'Whiplash']
-    source = urllib2.urlopen('https://www.wowhead.com/world-quests/bfa/na').read()
+    website = 'https://www.wowhead.com/world-quests/bfa/na'
+    source = urllib2.urlopen(website).read()
 
     for string in strings:
         string = string.capitalize()
@@ -41,6 +42,6 @@ def scan_active_world_quests():
         s.quit()
 
 while True:
-    six_hours = 21600
+    interval = 21600 # in seconds, 21600 seconds = 6 hours
     scan_active_world_quests()
-    time.sleep(six_hours)
+    time.sleep(interval)
