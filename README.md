@@ -15,7 +15,7 @@ This script is meant to send email notifications when a particular World of Warc
   - `sender_email`: Needs to be your gmail account, or a gmail account you have access to
   - `receiver_email`: The email account you want to receive the notifications (can be the same as the sender_email, which is in fact what I recommend)
   - `password`: Your gmail password. Case sensative.
-  - `strings`: Put the keywords to want to scan for in this array. You can put in as many as you want. Ex: `['Whiplash', 'Sabertron']` or `['Moxo the Beheader']` or `['Shell Game', 'Beachhead', 'Azerite Mining']`. Case does not matter.
+  - `key_words`: Put the keywords to want to scan for in this array. You can put in as many as you want. Ex: `['Whiplash', 'Sabertron']` or `['Moxo the Beheader']` or `['Shell Game', 'Beachhead', 'Azerite Mining']`. Case does not matter.
   - `website`: Whatver URL you want to scan. Current value is Wowhead's site for Battle for Azeroth active world quests in North America.
   - `interval`: How often do you want to scan the website? Current value is 21600 seconds (which is 6 hours). Put in any amount of time you like (in seconds).
 - Open a console and navigate to the where you have the file saved
