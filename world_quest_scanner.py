@@ -9,21 +9,21 @@ def scan_active_world_quests():
     email_subject = ''
     email_body = ''
 
-    strings = ['Sabertron', 'Whiplash']
+    key_words = ['Sabertron', 'Whiplash']
     website = 'https://www.wowhead.com/world-quests/bfa/na'
     source = urllib2.urlopen(website).read()
 
-    for string in strings:
-        string = string.capitalize()
-        if re.search(string, source, flags=re.IGNORECASE):
-            print(string + ' found on ' + time.ctime())
-            email_body += '<p>' + string + ' found on ' + time.ctime() + '!</p>'
+    for key_word in key_words:
+        key_word = key_word.capitalize()
+        if re.search(key_word, source, flags=re.IGNORECASE):
+            print(key_word + ' found on ' + time.ctime())
+            email_body += '<p>' + key_word + ' found on ' + time.ctime() + '!</p>'
             if len(email_subject) > 0:
-                email_subject += ', ' + string
-            else: email_subject = string
+                email_subject += ', ' + key_word
+            else: email_subject = key_word
 
         else:
-            print('Scan finished unsuccessfully for ' + string + ' on ' + time.ctime())
+            print('Scan finished unsuccessfully for ' + key_word + ' on ' + time.ctime())
 
     if len(email_body) > 0:
         msg = MIMEMultipart('alternative')
