@@ -10,6 +10,7 @@ This script is meant to send email notifications when a particular World of Warc
 
 ## Directions
 - Install Python2 if not already installed
+- Download the file `world_quest_scanner.py`
 - Open the file and customize variables to your liking
   - `sender_email`: Needs to be your gmail account, or a gmail account you have access to
   - `receiver_email`: The email account you want to receive the notifications (can be the same as the sender_email, which is in fact what I recommend)
