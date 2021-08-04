@@ -9,8 +9,8 @@ def scan_active_world_quests():
     email_subject = ''
     email_body = ''
 
-    key_words = ['Sabertron', 'Whiplash']
-    website = 'https://www.wowhead.com/world-quests/bfa/na'
+    key_words = ['Muck It Up', 'Failed Experiment', 'Summon Your Sins', 'Deadly Reminder']
+    website = 'https://www.wowhead.com/world-quests/sl/na'
     source = urllib2.urlopen(website).read()
 
     for key_word in key_words:

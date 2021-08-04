@@ -15,8 +15,8 @@ This script is meant to send email notifications when a particular World of Warc
   - `sender_email`: Needs to be your gmail account, or a gmail account you have access to
   - `receiver_email`: The email account you want to receive the notifications (can be the same as the sender_email, which is in fact what I recommend)
   - `password`: Your gmail password. Case sensative.
-  - `key_words`: Put the keywords to want to scan for in this array. You can put in as many as you want. Ex: `['Whiplash', 'Sabertron']` or `['Moxo the Beheader']` or `['Shell Game', 'Beachhead', 'Azerite Mining']`. Case does not matter.
-  - `website`: Whatver URL you want to scan. Current value is Wowhead's site for Battle for Azeroth active world quests in North America.
+  - `key_words`: Put the keywords to want to scan for in this array. You can put in as many as you want. Ex: `['Muck It Up', 'Summon Your Sins']` or `['Moxo the Beheader']`. Case does not matter.
+  - `website`: Whatver URL you want to scan. Current value is Wowhead's site for Shadowlands active world quests in North America.
   - `interval`: How often do you want to scan the website? Current value is 21600 seconds (which is 6 hours). Put in any amount of time you like (in seconds).
 - Open a console and navigate to the where you have the file saved
 - Start the script by running `python world_quest_scanner.py`. You must keep this console tab open indefinitely, if you close the console, the script will stop running in the background.
@@ -27,3 +27,6 @@ This script is meant to send email notifications when a particular World of Warc
 - Yes I know it's not the most eloquent and efficient thing ever, I'm fine with that.
 - Feel free to share, distribute, edit, improve, etc.
 - Does all of this sound too daunting? Get a really nice friend who knows their way around Python to run it for you! They can put your email address in the `receiver_email` field.
+
+## Updates
+- Email authentication will fail with Gmail accounts that have 2FA enabled
