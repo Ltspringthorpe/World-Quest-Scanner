@@ -20,7 +20,7 @@ This script is meant to send email notifications when a particular World of Warc
   - `interval`: How often do you want to scan the website? Current value is 21600 seconds (which is 6 hours). Put in any amount of time you like (in seconds).
 - Open a console and navigate to the where you have the file saved
 - Start the script by running `python world_quest_scanner.py`. You must keep this console tab open indefinitely, if you close the console, the script will stop running in the background.
-- Stop the script by pressing `ctrl+c` (`cmd+c` on mac) or by closing the console.
+- Stop the script by pressing `ctrl+c` or by closing the console.
 
 ## Notes
 - Feel free to email me with questions and I may have a quick answer, but I'm not really keen on providing intense IT support. I reserve the right to ignore you.

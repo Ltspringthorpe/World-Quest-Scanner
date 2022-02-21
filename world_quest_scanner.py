@@ -2,30 +2,38 @@ import urllib2, re, smtplib, ssl, time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def scan_active_world_quests():
-    sender_email = 'myemail@gmail.com'
-    receiver_email = 'myemail@gmail.com'
-    password = 'mypassword'
-    email_subject = ''
-    email_body = ''
+def scan_active_world_quests(email = False):
 
-    key_words = ['Muck It Up', 'Failed Experiment', 'Summon Your Sins', 'Deadly Reminder']
+    if email == True:
+        sender_email = 'myemail@gmail.com'
+        receiver_email = 'myemail@gmail.com'
+        password = 'mypassword'
+        email_subject = ''
+        email_body = ''
+
+    key_words = [
+        'Oozing with Character',
+        'Deadly Reminder'
+    ]
     website = 'https://www.wowhead.com/world-quests/sl/na'
     source = urllib2.urlopen(website).read()
+    print(time.ctime() + ' - Scanning...')
 
     for key_word in key_words:
-        key_word = key_word.capitalize()
+        key_word = key_word.title()
         if re.search(key_word, source, flags=re.IGNORECASE):
-            print(key_word + ' found on ' + time.ctime())
-            email_body += '<p>' + key_word + ' found on ' + time.ctime() + '!</p>'
-            if len(email_subject) > 0:
-                email_subject += ', ' + key_word
-            else: email_subject = key_word
+            print(u'\u2713 ' + key_word)
+
+            if email == True:
+                email_body += '<p>' + key_word + ' found on ' + time.ctime() + '!</p>'
+                if len(email_subject) > 0:
+                    email_subject += ', ' + key_word
+                else: email_subject = key_word
 
         else:
-            print('Scan finished unsuccessfully for ' + key_word + ' on ' + time.ctime())
+            print('  ' + key_word)
 
-    if len(email_body) > 0:
+    if email == True and len(email_body) > 0:
         msg = MIMEMultipart('alternative')
         msg['Subject'] = email_subject
         msg['From'] = sender_email
